@@ -1,60 +1,37 @@
-<!-- index.html -->
-<!-- 
- * PROJET : To-Do List en JS
- * AUTEUR : Titouan Gaucher
- * SOURCE : Tutoriel (https://youtu.be/3OqWCGVaOkA?si=UfGPjaSHmQmDS-_n)
- * FONCTIONNALITÉS : Ajout/suppression de tâches, sauvegarde locale, design responsive
--->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <!-- Définition du jeu de caractères -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Responsive design -->
-    <link rel="stylesheet" href="./style.css" />
-    <!-- Lien vers la feuille de style -->
-    <script src="./script.js" defer></script>
-    <!-- Script JS déclenché après le chargement -->
-    <title>Todo</title>
+    <title>ToDo list</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Section principale contenant la liste -->
-    <section class="todo">
-      <h2>To-do list</h2>
-
-      <!-- Champ d'ajout de tâche + bouton -->
-      <div class="input">
+    <div class="container">
+      <div class="todo-app"></div>
+      <h1>ToDo App</h1>
+      <form class="input-area">
         <input
           type="text"
-          class="input-field"
-          id="todoInput"
-          placeholder="Ajouter une nouvelle tâche "
+          class="todo-input"
+          placeholder="Ajouter une tâche..."
         />
-        <button class="btn">Ajouter</button>
+        <button type="submit" id="add-stask-button">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </form>
+      <div class="todo-container">
+        <ul id="task-list"></ul>
+        <img src="./images/empty.svg" alt="empty" class="empty-image" />
       </div>
-      <!-- Liste des tâches -->
-      <ul class="scroll">
-        <li id="todoList"></li>
-        <!-- La liste s'affichera ici dynamiquement -->
-      </ul>
-      <div>
-        <hr class="counter" />
-        <!-- Ligne de séparation -->
-        <div class="counter-container">
-          <p><span id="todoCount">0</span> éléments</p>
-          <button id="deleteButton">Tout supprimer</button>
-          <!-- Supprime toutes les tâches -->
-        </div>
-      </div>
-    </section>
-    <!-- Pied de page -->
-    <footer>
-      <div class="footer">
-        <p class="made-by">Fait par</p>
-        <p class="author">Titouan GAUCHER</p>
-        <!-- Nom stylisé -->
-      </div>
-    </footer>
+    </div>
   </body>
+  <script src="script.js"></script>
 </html>
